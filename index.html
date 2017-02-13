@@ -1,0 +1,281 @@
+<!DOCTYPE hmtl>
+<html><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap2/bootstrap-switch.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
+        <title>Videos</title>
+        <style>
+            .wrapped-text {
+
+
+                border-radius: 50%;
+                background-color: rgb(252, 115, 35);
+                width: 150px;
+                height: 150px;
+                text-align: center;
+                display: table;
+                color:white;
+                margin: 0 auto;
+                cursor: pointer;
+            }
+
+            .wrapped-tag {
+                display: table-cell;
+                vertical-align: middle;
+
+            }
+            .parent-node{
+
+            }
+            .ui-dialog{
+                top:100px !important;
+                position: fixed ;
+            }
+        </style>
+        <script>
+
+            $(function () {
+                $(".dialog").dialog({
+                    autoOpen: false,
+                    modal: true,
+                    height: "auto",
+                    width: 400,
+                    
+
+                    show: {
+                        //effect: "blind",
+                        duration: 1000
+                    },
+                    hide: {
+                        //effect: "explode",
+                        duration: 1000
+                    }
+                });
+
+                $(".wrapped-text").on("click", function () {
+                    var id = $(this).attr('id');
+                    console.log(id);
+                    $("#msg" + id).dialog("open");
+                });
+            });
+            $(window).resize(function() {
+                $(".dialog").dialog("option", "position", "center");
+            });
+
+
+        </script>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="jumbotron">
+                <h1>SECCL tutorial</h1> 
+                <p>Acontinuación encontrará los videos paso a paso del proceso de ECCL de inicio a fin.</p> 
+            </div>
+            <div class="col-md-2 parent-node">COORDINADOR MISIONAL  <br>
+                <div class="wrapped-text" id="d1">              
+                    <div class="wrapped-tag">Solicita áreas clave (Registra acta)</div>
+                    <div class="dialog" id="msgd1" title="Solicita áreas clave">
+                        <b>Requisitos:</b>
+                        <p>Ninguno</p>
+                        <hr/>
+                        <b>Proceso</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p>Áreas claves generadas o radicadas. Si es radicada, el asesor podrá aprobarla,  de lo contrario, estará disponible para actualizar </p>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-2 parent-node">ASESOR REGIONAL<br><br>
+                <div class="wrapped-text" id="d2">              
+                    <div class="wrapped-tag">Aprueba las áreas clave</div>
+                    <div class="dialog" id="msgd2" title="Aprueba las áreas clave">
+                        <b>Requisitos:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Proceso</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p>Áreas claves aprobadas para ser usadas o retiradas en el centro.</p>
+                    </div>
+
+
+                </div>
+                <br><br>
+                <div class="wrapped-text" id="d3">              
+                    <div class="wrapped-tag">Aprueba programaciones</div>
+                    <div class="dialog" id="msgd3" title="Aprueba programaciones">
+                        <b>Requisitos:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Proceso</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados: </b>
+                        <p>Programación aprobada, disponible para que el líder genere el proyecto.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-3 parent-node">LÍDER<br><br><br><br><br><br><br><br><br><br><br>
+                <div class="wrapped-text" id="d4">
+                    <div class="wrapped-tag">Registra programaciones</div>
+                    <div class="dialog" id="msgd4" title="Registra programaciones">
+                        <b>Requisitos:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Proceso</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p>Programación generada o radicada. Si es radicada, el Asesor podrá aprobarla, de lo contrario estará disponible para actualizar</p>
+                    </div>
+
+
+                </div><br>
+                <div class="wrapped-text" id="d5">
+                    <div class="wrapped-tag">Genera proyecto</div>
+                    <div class="dialog" id="msgd5" title="Genera proyecto">
+                         <b>Requisitos:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Proceso:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p>Proyecto generado</p>
+                    </div>
+
+                </div><br>
+                <div class="wrapped-text" id="d8">
+                    <div class="wrapped-tag">Registrar o actualizar requerimientos del proyecto</div>
+                    <div class="dialog" id="msgd8" title="Registrar o actualizar requerimientos del proyecto">
+                         <b>Requisitos:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Proceso:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p>Requerimientos registrados</p>
+                    </div>
+
+                </div>
+                <br>
+                <div class="wrapped-text" id="d10">
+                    <div class="wrapped-tag">Asociar evaluador</div>
+                    <div class="dialog" id="msgd10" title="Asociar evaluador">
+                        <b>Requisitos:</b>
+                        <p>El Evaluador debe estar registrado y asociado al centro, debe tener registradas las normas como especialidad</p>
+                        <hr/>
+                        <b>Proceso:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p>Evaluador asociado</p>
+                    </div>
+                </div><br>
+                <div class="wrapped-text" id="d11">
+                    <div class="wrapped-tag">Asociar candidatos</div>
+                    <div class="dialog" id="msgd11" title="Asociar Candidatos">
+                        <b>Requisitos:</b>
+                        <p>El candidato debe estar registrado</p>
+                        <hr/>
+                        <b>Proceso:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p>Candidatos asociado</p>
+                    </div>
+                </div><br/>
+                <div class="wrapped-text" id="d12">
+                    <div class="wrapped-tag">Cerrar selección</div>
+                    <div class="dialog" id="msgd12" title="Cerrar selección">
+                        <b>Requisitos:</b>
+                        <p>Debe tener asociados los Candidatos y Evaluadores</p>
+                        <hr/>
+                        <b>Proceso:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p>Proyecto en fase Determinación</p>
+                    </div>
+                </div><br/>
+                <div class="wrapped-text" id="d13">
+                    <div class="wrapped-tag">Generar inducción y sensibilización</div>
+                    <div class="dialog" id="msgd13" title="Generar inducción y sensibilización">
+                        <b>Requisitos:</b>
+                        <p>Proyecto con selección cerrada</p>
+                        <hr/>
+                        <b>Proceso:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p>Candidatos disponibles para su formalización</p>
+                    </div>
+                </div><br/>
+                <div class="wrapped-text" id="d14">
+                    <div class="wrapped-tag">Formalizar candidatos</div>
+                    <div class="dialog" id="msgd14" title="Formalizar candidatos">
+                        <b>Requisitos:</b>
+                        <p>Candidatos con inducción y sensibilización</p>
+                        <hr/>
+                        <b>Proceso:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p>Candidatos disponibles para crear grupo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 parent-node">APOYO<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <div class="wrapped-text" id="d6">              
+                    <div class="wrapped-tag">Certifica</div>
+                    <div class="dialog" id="msgd6" title="title">
+                        <b>Requisitos:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Proceso</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3 parent-node">EVALUADOR<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <div class="wrapped-text" id="d7">
+                    <div class="wrapped-tag">Evalúa</div>
+                    <div class="dialog" id="msgd7" title="Evalúa">
+                        <b>Requisitos:</b>
+                        <p></p>
+                        <hr/>
+                        <b>Proceso</b>
+                        <p></p>
+                        <hr/>
+                        <b>Resultados:</b>
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>  
+    </body>
+</html>
